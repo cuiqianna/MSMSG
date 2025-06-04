@@ -428,57 +428,7 @@ def efficient_graph_processing(image, index, component, adj_matrix, count, objec
 # if __name__== '__main__':
 #
 #     main_folder = r"./"
-#     file_str = ["ArcGIS", 'WDMI', 'google']
-#     seg_str_set = ['SLIC', 'LSC', 'SNIC', 'FSLIC', 'CMSuG']
-#
-#     for i in range(1,2):
-#         cur_str = file_str[i]
-#         print(cur_str)
-#         file_folder = os.path.join(main_folder, cur_str)
-#         image_file_name = os.path.join(file_folder, cur_str + ".jpg")
-#         image = plt.imread(image_file_name)
-#         height = image.shape[0]
-#         width = image.shape[1]
-#
-#         index_folder = os.path.join(file_folder, "pre_seg/TC/2000")
-#         component_folder = os.path.join(file_folder, "pre_seg/TC/2000")
-#         save_folder = os.path.join(file_folder, "pre_seg/TC/2000")
-#
-#
-#         for j in range(1):
-#             str_seg = seg_str_set[j]
-#             #print(str_seg)
-#
-#             cur_number = 2000
-#             tem_number = '%d' % cur_number
-#
-#             #subgraph_folder = os.path.join(component_folder, str_seg)
-#
-#             index_file = os.path.join(index_folder, str(tem_number) +  "_new.csv")
-#             index = np.loadtxt(open(index_file), delimiter=',', dtype=np.uint32, skiprows=0)
-#             #print(np.max(index))
-#
-#             count_file = os.path.join(index_folder, str(tem_number) +  "_count.csv")
-#             count = np.loadtxt(open(count_file), delimiter=',', dtype=np.uint32, skiprows=0)
-#             #print(len(count))
-#
-#             adj_file = os.path.join(index_folder, str(tem_number) + "_adj_new.csv")
-#             adj_matrix = np.loadtxt(open(adj_file), delimiter= ',', dtype= np.uint8, skiprows= 0)
-#
-#             object_diff_file = os.path.join(index_folder, str(tem_number) +  "_object_diff.csv")
-#             object_diff = np.loadtxt(open(object_diff_file), delimiter=',', dtype= np.float32, skiprows= 0)
-#
-#             object_adj = object_cal(object_diff, count, adj_matrix)
-#             #print(len(count))
-#             #print(object_adj)
-#
-#
-#
-#             img_new = image.copy()
-#             for h in range(height):
-#                 for w in range(width):
-#                     if (index[h, w] == 0):
-#                         img_new[h, w, :] = 0
+
 #
 #             component_save_file = os.path.join(component_folder, str(tem_number) +  "_component.csv")
 #             com_read = read_component(component_save_file)
@@ -525,8 +475,6 @@ def efficient_graph_processing(image, index, component, adj_matrix, count, objec
 #                         tau_set.append(tau)
 #                         seg_num_sum += 1
 #
-#                         new_index_name = os.path.join(save_folder,  str(tem_com) +"_" + str(tem_tau) + ".csv")
-#                         np.savetxt(new_index_name, new_index, delimiter=',', fmt='%d')
 #
 #                         result_im = new_image.copy()
 #                         im_height = result_im.shape[0]
@@ -540,14 +488,12 @@ def efficient_graph_processing(image, index, component, adj_matrix, count, objec
 #                                     result_im[h, w, 1] = 0
 #                                     result_im[h, w, 2] = 0
 #
-#                         #new_img_name = os.path.join(subgraph_folder, str_seg + "_" + str(tem_com) +"_" + str(tem_tau) + ".jpg")
-#                         #plt.imsave(new_img_name, result_im)
+
 #                     else:
 #                         pass
 #                     tau += 0.02
 #                     tem_tau = '%.2f' % tau
 #                 tau_name = os.path.join(save_folder,  str(tem_com) + "_" + "tau.csv")
-#                 np.savetxt(tau_name, tau_set, delimiter=',', fmt='%.2f')
-#             print(cur_str, ",", index_file, ",", "time-", time_sum)
+
 #
 #
