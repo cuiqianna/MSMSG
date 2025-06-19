@@ -320,54 +320,6 @@ def component_processing(index):
     return index_2, component, t
 
 
-#
-# if __name__ == '__main__':
-#     main_folder = r"./"
-#     file_str = ["ArcGIS", 'WDMI', 'google']
-#     seg_str_set = ['SLIC', 'LSC', 'SNIC', 'FSLIC', 'CMSuG']
-#
-#     for i in range(2,3):
-#         cur_str = file_str[i]
-#
-#         file_folder = os.path.join(main_folder, cur_str)
-#         image_file_name = os.path.join(file_folder, cur_str + ".jpg")
-#         image = plt.imread(image_file_name)
-#
-#         #index_folder = os.path.join(file_folder, "pre_seg/TC")
-#         save_folder = os.path.join(file_folder, "pre_seg/TC/200")
-#
-#         for j in range(1):
-#             str_seg = seg_str_set[j]
-#
-#             cur_number = 200
-#             tem_number = '%d' % cur_number
-#
-#             MM_reseg_csv = os.path.join(save_folder, str(tem_number) + "_reseg_new.csv")
-#             index = np.loadtxt(open(MM_reseg_csv), delimiter=',', dtype=np.uint32, skiprows=0)
-#
-#             index2 = mini_object_removal(index)
-#
-#             index_new_name = os.path.join(save_folder, str(tem_number) + "_new.csv")
-#             np.savetxt(index_new_name, index2, delimiter= ',', fmt = '%d')
-#             print(MM_reseg_csv)
-#
-#             start = time.time()
-#
-#             component = component_cal(index2)
-#             end = time.time()
-#
-#             t = end - start
-#             component_save_file = os.path.join(save_folder, str(tem_number) + "_component.csv")
-#             component_save(component, component_save_file)
-#             #
-#
-#             #im_bound = image_show(index2, image)
-#             #plt.imsave("a.jpg", im_bound)
-#
-#             #sub_image_show(im_bound, index2, component, subgraph_folder, str_seg)
-#             print(cur_str, "--", str_seg, "--:", t)
-#
-#
 
 
 
